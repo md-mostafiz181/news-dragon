@@ -12,7 +12,7 @@ const LeftSideNav = () => {
     }, [])
     return (
         <div className="space-y-5">
-            <h1 className="text-3xl font-bold">All Category :{categories.length} </h1>
+            <h1 className="text-3xl font-bold mt-2">All Category </h1>
 
             <div className="my-3">
             {
