@@ -47,7 +47,7 @@ const Navbar = () => {
                 <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
             </div>
-       <Link>
+       <Link to="/login">
        <button className="btn">Login</button>
        </Link>
       </div>
