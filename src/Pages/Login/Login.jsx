@@ -1,6 +1,13 @@
 import Navbar from "../Shared/Navbar/Navbar";
 
 const Login = () => {
+
+    const handleToLogin = e =>{
+        e.preventDefault()
+        const email = e.target.email.value;
+        const password= e.target.password.value;
+        console.log(email,password)
+    }
   return (
     <div>
       <Navbar></Navbar>
@@ -11,7 +18,7 @@ const Login = () => {
           </h2>
           <hr />
 
-          <form className="space-y-6 mt-3">
+          <form  onSubmit={handleToLogin} className="space-y-6 mt-3 ">
             <div>
               <label
                 htmlFor="email"
@@ -46,7 +53,7 @@ const Login = () => {
               type="submit"
               className="w-full py-3 mt-6 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-200 font-semibold text-lg"
             >
-              Log In
+              Login
             </button>
           </form>
 
