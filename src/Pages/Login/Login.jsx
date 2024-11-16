@@ -1,15 +1,9 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import Navbar from "../Shared/Navbar/Navbar";
-import auth from "../../Firebase/firebase.config";
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
+import Navbar from "../Shared/Navbar/Navbar";
 
 
 const Login = () => {
-
-    const [users, setUsers]= useState(null)
-    const [error, setError]=useState();
-
 
     const handleToLogin = e =>{
         e.preventDefault()
@@ -17,20 +11,7 @@ const Login = () => {
         const password= e.target.password.value;
         console.log(email,password)
 
-        setUsers("")
-        setError("")
 
-        createUserWithEmailAndPassword(auth,email,password)
-        .then(result => {
-
-            setUsers(result.user)
-            e.target.reset();
-            
-        })
-        .catch(error=>{
-
-            setError(error)
-        })
     }
   return (
     <div>
@@ -81,18 +62,7 @@ const Login = () => {
             </button>
           </form>
 
-          {
-            users && <p className="text-1xl font-bold text-green-600 mt-2">User login successful</p>
-            
-          }
-          {
-            error && <p className="text-1xl font-bold text-red-600 mt-2">{error.message}</p>
-          }
-
-          {/* {
-            loading && <span className="loading loading-spinner loading-lg"></span>
-          } */}
-
+  
           <p className="text-center text-gray-500 text-sm mt-6">
             Don’t have an account? <Link to="/register"><a href="#" className="text-blue-600 hover:underline">
               Register
