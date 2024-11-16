@@ -3,6 +3,15 @@ import Navbar from "../Shared/Navbar/Navbar";
 
 
 const Register = () => {
+
+    const handleAddToRegister = e =>{
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const photoUrl = e.target.photoUrl.value;
+        const password = e.target.password.value;
+        console.log(name,email,photoUrl,password)
+    }
     return (
         <div>
             <Navbar />
@@ -13,7 +22,7 @@ const Register = () => {
                     </h2>
                     <hr />
 
-                    <form  className="space-y-6 mt-3">
+                    <form onSubmit={handleAddToRegister}  className="space-y-6 mt-3">
                         <div>
                             <label
                                 htmlFor="name"
