@@ -1,11 +1,24 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
+
+ 
+  const {user, logOut}=useContext(AuthContext)
+
+  const handleSignOut = ()=>{
+    logOut()
+    .then()
+    .catch()
+  }
+
 
     const navLinks = <>
     <li><Link to="/">Home</Link></li>
     <li><Link to="/about">About</Link></li>
     <li><Link to="/career">Career</Link></li>
+    
     </>
   return (
     <div className="navbar bg-slate-200">
@@ -47,9 +60,18 @@ const Navbar = () => {
                 <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
             </div>
-       <Link to="/login">
-       <button className="btn">Login</button>
-       </Link>
+
+          {
+            user ?
+            <button onClick={handleSignOut} className="btn">Sign Out</button>
+            :
+            <Link to="/login">
+            <button className="btn">Login</button>
+            </Link>
+          }
+
+
+       
       </div>
     </div>
   );
