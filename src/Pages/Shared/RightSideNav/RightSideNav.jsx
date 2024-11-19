@@ -27,13 +27,15 @@ const RightSideNav = () => {
 
            <div className="mt-2 px-2 bg-slate-300">
                 <h1 className="text-3xl font-bold">Q Zone </h1>
+                <div className="w-full">
                 <img src={swimmingImg} alt="" />
                 <img src={playImg} alt="" />
                 <img src={classImg} alt="" />
+                </div>
            </div>
 
            <div className="mt-2">
-            <img src={coverImg} alt="" />
+            <img className="w-full" src={coverImg} alt="" />
            </div>
 
            
